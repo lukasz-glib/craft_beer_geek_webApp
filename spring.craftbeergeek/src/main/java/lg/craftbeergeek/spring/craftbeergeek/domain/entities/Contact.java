@@ -8,6 +8,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -17,19 +18,18 @@ import javax.validation.constraints.Size;
 @EqualsAndHashCode(of = "id")
 
 @Entity
-@Table(name = "registrations")
-public class Registration {
+@Table(name = "contacts")
+public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Uzupełnij imię")
-    private String firstName;
-    @NotBlank(message = "Uzupełnij nazwisko")
-    private String lastName;
-    @Email(message = "Uzupełnij email")
+    private String fullName;
+    @Email
     private String email;
-    @NotBlank(message = "Podaj hasło")
-    private String password;
-
+    @Size(max = 30)
+    private String topic;
+    @Size(max = 200)
+    private String description;
 }
