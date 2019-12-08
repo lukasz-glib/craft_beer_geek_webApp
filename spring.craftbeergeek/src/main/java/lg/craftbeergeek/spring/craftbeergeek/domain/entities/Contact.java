@@ -24,9 +24,9 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Uzupełnij imię")
+    @NotBlank(message = "Podaj imię i nazwisko")
     private String fullName;
-    @Email
+    @Email(message = "Uzupełnij email")
     private String email;
     @Size(max = 30)
     private String topic;
