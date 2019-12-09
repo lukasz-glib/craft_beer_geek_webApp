@@ -9,27 +9,31 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "password")
 @EqualsAndHashCode(of = "id")
 
 @Entity
-@Table(name = "registrations")
-public class Registration {
+@Table(name = "users")
+public class User {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Uzupełnij imię")
-    private String firstName;
-    @NotBlank(message = "Uzupełnij nazwisko")
-    private String lastName;
-    @Email(message = "Uzupełnij email")
+    @Column(nullable = false, unique = true)
+    private String username;
+    @Column(nullable = false, unique = true)
     private String email;
-    @NotBlank(message = "Podaj hasło")
+    @Column(nullable = false)
+    private Boolean active = Boolean.FALSE;
+    @Column(nullable = false)
     private String password;
 
-
+    @ManyToMany
+    private Set<Role> roles = new HashSet<>();
 }
