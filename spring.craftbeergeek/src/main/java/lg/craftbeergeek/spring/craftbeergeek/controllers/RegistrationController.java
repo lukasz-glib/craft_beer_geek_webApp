@@ -27,14 +27,14 @@ public class RegistrationController {
     @GetMapping
     public String getRegistrationPage (Model model) {
         model.addAttribute("registrationData", new RegistrationDataDTO());
-        return "register/form";
+        return "register-form";
     }
 
     @PostMapping
     public String processRegistrationPage(@ModelAttribute("registrationData")
                                               @Valid RegistrationDataDTO registrationData, BindingResult result){
         if (result.hasErrors()) {
-            return "register/form";
+            return "register-form";
         }
         registrationService.register(registrationData);
         return "redirect:/";
