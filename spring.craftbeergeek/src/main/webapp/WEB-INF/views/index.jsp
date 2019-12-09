@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spring Transitions</title>
+    <title>Craft Bear Geek</title>
     <%-- Elementy dotyczące treści strony --%>
 
 
@@ -33,8 +33,8 @@
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Link do niczego
+                            <a class="navbar-item" href="/contact">
+                                Kontakt
                             </a>
                             <%-- Tutaj kolejne linki w menu dodatkowym --%>
                         </div>
@@ -67,13 +67,14 @@
     <div class="container">
         <div class="hero-body">
             <h1 class="title">
-                Spring Transitions
+                Craft Bear Geek
             </h1>
             <h2 class="subtitle">
-                Witaj w projekcie <strong>Spring Transitions</strong>.
-                <br/>Znajdziesz tutaj mnóstwo przykładów w jaki sposób mogą być wdrażane kolejne
-                rozwinięcia aplikacji opartej na
-                frameworku Spring i Spring Boot
+                Witaj na stronie <strong>Miłośników piwa craftowego !</strong>.
+                <br/>Lubisz napić się dobrego piwa kraftowego? Lubisz nowe wyzwania i chcesz nauczyć się sam ważyć piwo?
+                A może chcesz zrobić dobre wrażenie na znajomych? Postaramy się o to, aby Twoja wiedza była pełna
+                i wartościowa. Na naszej stronie znajdziesz wiele przepisów ważenia piwa rzemieśliniczego w różnych
+                stylach oraz aktualności i nadchodzące wydarzenia w branży piwowarskiej.
             </h2>
 
         </div>
@@ -82,7 +83,7 @@
 <footer class="footer">
     <div class="container">
         <div class="content has-text-centered">
-            <p><strong>Spring Transitions</strong> by lukasz-glib &copy; All rights reserved</p>
+            <p><strong>Craft Bear Geek</strong> by lukasz-glib &copy; All rights reserved</p>
         </div>
     </div>
 </footer>
