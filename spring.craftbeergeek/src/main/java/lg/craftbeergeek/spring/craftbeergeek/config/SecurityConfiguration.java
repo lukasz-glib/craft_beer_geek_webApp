@@ -3,6 +3,7 @@ package lg.craftbeergeek.spring.craftbeergeek.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,4 +34,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("SELECT u.username, r.name FROM users u JOIN users_roles ur " +
                         "ON u.id = ur.user_id JOIN roles r ON ur.roles_id = r.id WHERE u.username = ?");
     }
+
+    @Override
+    protected void configure (HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/logout").authenticated()
+                .antMatchers("/user", "/user/**").hasRole("USER")
+                .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated() //na każde żądanie nie uwzględnione wyżej - wymagana autoryzacja
+                .and()
+            .formLogin()
+                .loginPage("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/")
+                .and()
+            .logout()
+                .logoutUrl("/logout")
+                .and()
+            .csrf();
+
+    }
+
 }
