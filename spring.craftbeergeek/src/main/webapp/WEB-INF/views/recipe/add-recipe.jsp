@@ -29,45 +29,63 @@
         <div class="columns">
             <div class="column"></div>
             <div class="column">
-                <form:form method="post" modelAttribute="registrationData">
+                <form:form method="post" modelAttribute="recipe">
                     <div class="field">
-                        <form:label path="username" cssClass="label">Username</form:label>
+                        <form:label path="nameBeer" cssClass="label">Nazwa piwa</form:label>
                         <div class="control has-icons-left">
-                            <form:input path="username" cssClass="input" required="true"/>
+                            <form:input path="nameBeer" cssClass="input" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
-                            <p class="help">Set your username</p>
+                            <p class="help">Set name of your beer</p>
                         </div>
                     </div>
                     <div class="field">
-                        <form:label path="email" cssClass="label">Email</form:label>
+                        <form:label path="malt" cssClass="label">Słody</form:label>
                         <div class="control has-icons-left">
-                            <form:input path="email" cssClass="input" required="true"/>
+                            <form:textarea path="malt" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i
                                     class="fas fa-envelope"></i></span>
-                            <p class="help">Set your email</p>
+                            <p class="help">Set all malts which are using in brewing</p>
                         </div>
                     </div>
                     <div class="field">
-                        <form:label path="password" cssClass="label">Password</form:label>
+                        <form:label path="hop" cssClass="label">Chmiele</form:label>
                         <div class="control has-icons-left">
-                            <form:password path="password" cssClass="input" required="true"/>
+                            <form:textarea path="hop" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
-                            <p class="help">Set your password</p>
+                            <p class="help">Set all hops which are using in brewing</p>
                         </div>
                     </div>
                     <div class="field">
-                        <form:label path="repassword" cssClass="label">Retype Password</form:label>
+                        <form:label path="mashing" cssClass="label">Zacieranie</form:label>
                         <div class="control has-icons-left">
-                            <form:password path="repassword" cssClass="input" required="true"/>
+                            <form:textarea path="mashing" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
-                            <p class="help">Set your password again</p>
+                            <p class="help">Set description relating to mashing </p>
                         </div>
                     </div>
                     <div class="field">
-                        <form:label path="termsAcceptance"
-                                    cssClass="checkbox">
-                            <form:checkbox path="termsAcceptance"
-                                           required="true"/> Accept terms</form:label>
+                        <form:label path="boiling" cssClass="label">Gotowanie</form:label>
+                        <div class="control has-icons-left">
+                            <form:textarea path="boiling" cssClass="text-area" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            <p class="help">Set description relating to boiling </p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <form:label path="fermentation" cssClass="label">Fermentacja</form:label>
+                        <div class="control has-icons-left">
+                            <form:textarea path="fermentation" cssClass="text-area" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            <p class="help">Set description relating to fermentation </p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <form:label path="bottling" cssClass="label">Butelkowanie</form:label>
+                        <div class="control has-icons-left">
+                            <form:textarea path="bottling" cssClass="text-area" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            <p class="help">Set description relating to bottling </p>
+                        </div>
                     </div>
                     <div class="field is-grouped">
                         <div class="control">

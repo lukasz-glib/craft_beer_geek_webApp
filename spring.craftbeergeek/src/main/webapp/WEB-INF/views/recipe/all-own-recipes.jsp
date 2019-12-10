@@ -37,12 +37,15 @@
                 <c:url value="/recipes/update" var="updateURL">
                     <c:param name="id" value="${recipe.id}"/>
                 </c:url>
-                <a href="${deleteURL}">Usuń</a>
-                <a href="${updateURL}">Edytuj</a>
+                <a class="button is-primary" href="${deleteURL}">Usuń</a>
+                <a class="button is-link" href="${updateURL}">Edytuj</a>
             </td>
 
         </tr>
     </c:forEach>
+    <a class="button is-success" href="/recipes/create">
+        <strong>Nowy przepis</strong>
+    </a>
 </table>
 <jsp:include page="../media/footer.jsp"/>
 </body>
