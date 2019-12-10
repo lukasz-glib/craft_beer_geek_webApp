@@ -36,4 +36,7 @@ public class Recipe {
     private String fermentation;
     private String bottling;
 
+    @ManyToOne
+    private User user;
+
 }

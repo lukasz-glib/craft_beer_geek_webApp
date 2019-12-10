@@ -9,7 +9,9 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -36,4 +38,10 @@ public class User {
 
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany
+    private List<Recipe> recipes = new ArrayList<>();
+
+
+
 }
