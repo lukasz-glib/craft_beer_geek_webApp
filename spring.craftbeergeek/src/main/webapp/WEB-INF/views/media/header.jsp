@@ -28,12 +28,14 @@
                 <div class="navbar=end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary" href="/register">
-                                <strong>Zarejestruj</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Zaloguj</strong>
-                            </a>
+                            <sec:authorize access="isAnonymous()">
+                                <a class="button is-primary" href="/register">
+                                    <strong>Zarejestruj</strong>
+                                </a>
+                                <a class="button is-success" href="/login">
+                                    <strong>Zaloguj</strong>
+                                </a>
+                            </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
                                 <a class="button is-primary" href="/user">
                                     <strong>Twoje konto</strong>
