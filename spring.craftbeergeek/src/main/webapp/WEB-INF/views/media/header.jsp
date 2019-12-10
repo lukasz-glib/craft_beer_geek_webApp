@@ -37,6 +37,12 @@
                                 </a>
                             </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
+                                <a class="button is-primary" href="/recipes">
+                                    <strong>Wszystkie przepisy</strong>
+                                </a>
+                                <a class="button is-success" href="/recipes/own-recipes">
+                                    <strong>Moje przepisy</strong>
+                                </a>
                                 <a class="button is-primary" href="/user">
                                     <strong>Twoje konto</strong>
                                 </a>
