@@ -5,10 +5,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Wszystkie przepisy</title>
+    <title>All new user's craft beer recipe</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="/webjars/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="/webjars/font-awesome/5.10.1/js/all.min.js"></script>
 </head>
-<body>
+<body class = "has-navbar-fixed-top">
     <jsp:include page="../media/header.jsp"/>
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+    </table>
     <table>
         <tr>
             <th>Lp.</th>

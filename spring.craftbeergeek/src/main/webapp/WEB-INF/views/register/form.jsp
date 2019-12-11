@@ -6,15 +6,9 @@
 <html>
 <head>
     <title>Register yout account</title>
-    <%-- Elementy dotyczące treści strony --%>
-    <%-- Elementy dotyczące wyświetlania --%>
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
-
-    <%-- Linki do szablonów css trafią tutaj --%>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-
-    <%-- Linki do skryptów js trafią tutaj --%>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="/webjars/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="/webjars/font-awesome/5.10.1/js/all.min.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
 <jsp:include page="../media/header.jsp"/>
