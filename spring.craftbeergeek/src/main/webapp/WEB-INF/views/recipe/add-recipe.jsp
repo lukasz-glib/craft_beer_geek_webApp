@@ -41,7 +41,8 @@
                     <div class="field">
                         <form:label path="malt" cssClass="label">Słody</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="malt" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="malt" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i
                                     class="fas fa-envelope"></i></span>
                             <p class="help">Set all malts which are using in brewing</p>
@@ -50,7 +51,8 @@
                     <div class="field">
                         <form:label path="hop" cssClass="label">Chmiele</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="hop" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="hop" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
                             <p class="help">Set all hops which are using in brewing</p>
                         </div>
@@ -58,7 +60,8 @@
                     <div class="field">
                         <form:label path="mashing" cssClass="label">Zacieranie</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="mashing" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="mashing" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
                             <p class="help">Set description relating to mashing </p>
                         </div>
@@ -66,7 +69,8 @@
                     <div class="field">
                         <form:label path="boiling" cssClass="label">Gotowanie</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="boiling" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="boiling" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
                             <p class="help">Set description relating to boiling </p>
                         </div>
@@ -74,7 +78,8 @@
                     <div class="field">
                         <form:label path="fermentation" cssClass="label">Fermentacja</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="fermentation" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="fermentation" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
                             <p class="help">Set description relating to fermentation </p>
                         </div>
@@ -82,7 +87,8 @@
                     <div class="field">
                         <form:label path="bottling" cssClass="label">Butelkowanie</form:label>
                         <div class="control has-icons-left">
-                            <form:textarea path="bottling" cssClass="text-area" required="true"/>
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="bottling" cssClass="text-area" required="true"/>
                             <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
                             <p class="help">Set description relating to bottling </p>
                         </div>

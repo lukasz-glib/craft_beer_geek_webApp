@@ -34,11 +34,11 @@
                 <c:url value="/recipes/delete" var="deleteURL">
                     <c:param name="id" value="${recipe.id}"/>
                 </c:url>
-<%--                <c:url value="/recipes/update" var="updateURL">--%>
-<%--                    <c:param name="id" value="${recipe.id}"/>--%>
-<%--                </c:url>--%>
+                <c:url value="/recipes/update" var="updateURL">
+                    <c:param name="id" value="${recipe.id}"/>
+                </c:url>
                 <a class="button is-primary" href="${deleteURL}">Usuń</a>
-<%--                <a class="button is-link" href="${updateURL}">Edytuj</a>--%>
+                <a class="button is-link" href="${updateURL}">Edytuj</a>
             </td>
 
         </tr>
