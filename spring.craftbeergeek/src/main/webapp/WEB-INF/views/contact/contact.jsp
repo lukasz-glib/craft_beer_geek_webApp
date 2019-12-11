@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -28,7 +29,70 @@
             <a href="https://twitter.com/?lang=pl">
                 <img src="/pictures/tweeter.png" width="100px" height="100px">
             </a>
-
+            <h1 class="title">
+                Zachęcamy do aktywnego uczestnictwa w tworzeniu naszej strony. Zostań współtwórcą kraftowego świata!
+            </h1>
+            <h2 class="subtitle">
+                Chcemy stale podnosić jakość naszej strony i wzbogacać naszą bazę o nowe informacje by dzielić się
+                najlepszą wiedzą. Pomóż nam ulepszać portal. Czekamy na Twoje uwagi, sugestie i pytania.
+            </h2>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column">
+                <form:form method="post" modelAttribute="contact">
+                    <div class="field">
+                        <form:label path="fullName" cssClass="label">Imię i Nazwisko</form:label>
+                        <div class="control has-icons-left">
+                            <form:input path="fullName" cssClass="input" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                            <p class="help">Set your fullname</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <form:label path="email" cssClass="label">Adres Email</form:label>
+                        <div class="control has-icons-left">
+                            <form:input path="email" cssClass="input" required="true"/>
+                            <span class="icon is-small is-left"><i
+                                    class="fas fa-envelope"></i></span>
+                            <p class="help">Set your email</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <form:label path="topic" cssClass="label">Temat zapytania</form:label>
+                        <div class="control has-icons-left">
+                            <form:input path="topic" cssClass="input" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            <p class="help">Set name of your question's topic</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <form:label path="description" cssClass="label">Opis zapytania</form:label>
+                        <div class="control has-icons-left">
+                            <form:textarea style="margin: 0px; width: 450px; height: 200px"
+                                           path="description" cssClass="text-area" required="true"/>
+                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            <p class="help">Set description of your question</p>
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-success is-link" type="submit">Register
+                            </button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-text" type="reset">Reset</button>
+                        </div>
+                    </div>
+                    <form:errors path="*"/>
+                </form:form>
+            </div>
+            <div class="column">
+            </div>
         </div>
     </div>
 </section>
