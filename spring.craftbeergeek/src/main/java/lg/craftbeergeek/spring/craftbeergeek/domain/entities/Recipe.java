@@ -22,7 +22,6 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    @Size(max = 60)
     private String nameBeer;
     @Column(nullable = false)
     private String malt;

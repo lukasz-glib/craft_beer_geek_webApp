@@ -24,12 +24,12 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Podaj imię i nazwisko")
+    @Column(nullable = false)
     private String fullName;
-    @Email(message = "Uzupełnij email")
+    @Column(nullable = false)
     private String email;
-    @Size(max = 30)
+    @Column(nullable = false)
     private String topic;
-    @Size(max = 200)
+    @Column(nullable = false)
     private String description;
 }
