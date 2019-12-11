@@ -14,7 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,12 +54,27 @@ public class DefaultRecipeService implements RecipeService {
     }
 
     @Override
+    public List<Recipe> getOwnRecipesPage(Principal principal) {
+        String username = principal.getName();
+        return recipeRepository.findAllByUserUsername(username);
+    }
+
+
+    @Override
     public void deleteRecipe(RecipeDataDTO recipeData, Long id) {
         Recipe recipe = recipeRepository.findById(id).get();
         log.debug("Usunięcie przepisu: {}", recipe);
-        recipeRepository.delete(recipe);
+        if (recipe != null) {
+            recipeRepository.delete(recipe);
+        }
+        log.debug("Usunięto przepis: {}", recipe);
     }
 
+    @Override
+    public Recipe prepareUpdateForRecipe(Long id) {
+        Optional<Recipe> result = recipeRepository.findById(id);
+        return result.get();
+    }
 
 
 }

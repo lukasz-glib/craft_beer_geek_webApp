@@ -24,11 +24,9 @@ import java.util.Optional;
 public class RecipeController {
 
     private final RecipeService recipeService;
-    private final RecipeRepository recipeRepository;
 
-    public RecipeController(RecipeService recipeService, RecipeRepository recipeRepository) {
+    public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
-        this.recipeRepository = recipeRepository;
     }
 
     @GetMapping
@@ -37,16 +35,10 @@ public class RecipeController {
         return "recipe/all-recipes";
     }
 
-//    @GetMapping("/own-recipes")
-//    public String getOwnRecipesPage(Model model, Long id) {
-//        model.addAttribute("own-recipes", recipeService.allRecipesForUserById(id));
-//        return "recipe/all-own-recipes";
-//    }
 
     @GetMapping("/own-recipes")
     public String getOwnRecipesPage(Model model, Principal principal) {
-        String username = principal.getName();
-        List<Recipe> recipes = recipeRepository.findAllByUserUsername(username);
+        List<Recipe> recipes = recipeService.getOwnRecipesPage(principal);
         model.addAttribute("ownRecipes", recipes);
         return "recipe/all-own-recipes";
     }
@@ -67,20 +59,17 @@ public class RecipeController {
         return "redirect:/recipes";
     }
 
-    @GetMapping ("/delete")
-    public String processDeleteRecipe(Long id) {
-        Recipe recipe = recipeRepository.findById(id).get();
-        if (recipe != null) {
-            recipeRepository.delete(recipe);
-        }
+
+    @GetMapping("/delete")
+    public String processDeleteRecipe(RecipeDataDTO recipeData, Long id) {
+        recipeService.deleteRecipe(recipeData, id);
         return "redirect:/recipes";
     }
 
+
     @GetMapping("/update")
     public String prepareUpdateForRecipe(Long id, Model model) {
-        Optional<Recipe> result = recipeRepository.findById(id);
-        Recipe recipe = result.get();
-        model.addAttribute("recipe", recipe);
+        model.addAttribute("recipe", recipeService.prepareUpdateForRecipe(id));
         return "recipe/update-recipe";
     }
 
