@@ -6,12 +6,12 @@ import lg.craftbeergeek.spring.craftbeergeek.dtos.RecipeDataDTO;
 import java.util.List;
 
 public interface RecipeService {
-    Recipe addRecipe(RecipeDataDTO recipeData);
+    void addRecipe(RecipeDataDTO recipeData);
 
-    List<RecipeDataDTO> allRecipesForUserById(Long id);
+//    List<RecipeDataDTO> allRecipesForUserByUsername(RecipeDataDTO recipeData);
 
     List<RecipeDataDTO> findAllRecipes();
 
-    void deleteRecipe(RecipeDataDTO recipeData);
+    void deleteRecipe(RecipeDataDTO recipeData, Long id);
 
 }
