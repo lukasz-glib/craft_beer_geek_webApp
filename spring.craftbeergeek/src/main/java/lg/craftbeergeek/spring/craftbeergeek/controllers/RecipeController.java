@@ -4,6 +4,7 @@ import lg.craftbeergeek.spring.craftbeergeek.domain.entities.Recipe;
 import lg.craftbeergeek.spring.craftbeergeek.domain.repositories.RecipeRepository;
 import lg.craftbeergeek.spring.craftbeergeek.dtos.RecipeDataDTO;
 import lg.craftbeergeek.spring.craftbeergeek.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/recipes")
+@Slf4j
 public class RecipeController {
 
     private final RecipeService recipeService;
@@ -57,7 +59,7 @@ public class RecipeController {
     }
 
     @PostMapping("/create")
-    public String processCreationRecipeForm(@ModelAttribute @Valid RecipeDataDTO recipeDataDTO, BindingResult result) {
+    public String processCreationRecipeForm(@ModelAttribute("recipe") @Valid RecipeDataDTO recipeDataDTO, BindingResult result) {
         if (result.hasErrors()) {
             return "recipe/add-recipe";
         }
@@ -82,6 +84,15 @@ public class RecipeController {
         return "recipe/update-recipe";
     }
 
-
+    @PostMapping("/update")
+    public String processUpdateForRecipe (@ModelAttribute("recipe") @Valid RecipeDataDTO recipeData,
+                                          BindingResult result) {
+        log.warn(recipeData.toString());
+        if (result.hasErrors()) {
+            return "recipe/update-recipe";
+        }
+        recipeService.addRecipe(recipeData);
+        return "redirect:/recipes";
+    }
 
 }

@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 @Data
 public class RecipeDataDTO {
 
+    private Long id;
     @Size(max = 60)
     private String nameBeer;
     @NotBlank
