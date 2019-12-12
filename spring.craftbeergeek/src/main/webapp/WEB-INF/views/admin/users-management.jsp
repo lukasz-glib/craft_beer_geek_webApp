@@ -22,6 +22,7 @@
         <th>Lp.</th>
         <th>Nazwa użytkownika</th>
         <th>Data zarejestrowania</th>
+        <th>Status: czy aktywny</th>
 
     </tr>
     <c:forEach items="${allUsers}" var="user" varStatus="stat">
@@ -29,6 +30,7 @@
             <td>${stat.count}</td>
             <td>${user.username}</td>
             <td>${user.addedDateUser}</td>
+            <td>${user.active}</td>
             <td>
                 <c:url value="/admin" var="returnURL"></c:url>
                 <a class="button is-link" href="${returnURL}">Powrót</a>
@@ -36,6 +38,14 @@
                     <c:param name="id" value="${user.id}"/>
                 </c:url>
                 <a class="button is-primary" href="${deleteURL}">Usuń</a>
+                <c:url value="/admin/active" var="activeURL">
+                    <c:param name="id" value="${user.id}"/>
+                </c:url>
+                <a class="button is-grouped-multiline" href="${activeURL}">Odblokuj użytkownika</a>
+                <c:url value="/admin/blocked" var="blockedURL">
+                    <c:param name="id" value="${user.id}"/>
+                </c:url>
+                <a class="button is-danger" href="${blockedURL}">Zablokuj użytkownika</a>
             </td>
         </tr>
     </c:forEach>
