@@ -1,4 +1,5 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -15,7 +16,9 @@
     <div class="container">
         <div class="hero-body">
             <h1 class="title">
-                Witaj użytkowniku na swoim koncie !
+                <form:form method="get" modelAttribute="userAccount">
+                    Witaj użytkowniku <h1>${userAccount.username}</h1> na swoim koncie !
+                </form:form>
             </h1>
             <h2 class="subtitle">
                 Witaj na stronie <strong>Miłośników piwa craftowego !</strong>.

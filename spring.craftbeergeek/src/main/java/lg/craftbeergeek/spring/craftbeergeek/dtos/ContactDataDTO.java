@@ -16,10 +16,10 @@ public class ContactDataDTO {
     @NotBlank
     private String email;
     @Size(max = 30)
-    @NotBlank
+    @NotBlank(message = "Podaj temat wiadomości")
     private String topic;
     @Size(max = 200)
-    @NotBlank
+    @NotBlank(message = "Podaj wiadomość")
     private String description;
 
 }
