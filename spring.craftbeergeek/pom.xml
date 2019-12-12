@@ -11,7 +11,8 @@
 	<groupId>lg.craftbeergeek</groupId>
 	<artifactId>spring.craftbeergeek</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+<!--	do heroku - war nie potrzebny-->
+<!--	<packaging>war</packaging>-->
 	<name>spring.craftbeergeek</name>
 	<description>Project for Spring Boot - web app "Craft Beer Geek"</description>
 
