@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -35,7 +36,8 @@ public class User {
     private Boolean active = Boolean.FALSE;
     @Column(nullable = false)
     private String password;
-
+    @Column
+    private LocalDate addedDateUser;
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
 

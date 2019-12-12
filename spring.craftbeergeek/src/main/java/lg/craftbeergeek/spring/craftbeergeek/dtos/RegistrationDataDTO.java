@@ -3,6 +3,7 @@ package lg.craftbeergeek.spring.craftbeergeek.dtos;
 import lombok.Data;
 
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 
 @Data
 public class RegistrationDataDTO {
@@ -17,4 +18,5 @@ public class RegistrationDataDTO {
     private String repassword;
     @NotNull @AssertTrue
     private Boolean termsAcceptance;
+    private LocalDate addedDateUser = LocalDate.now();
 }
