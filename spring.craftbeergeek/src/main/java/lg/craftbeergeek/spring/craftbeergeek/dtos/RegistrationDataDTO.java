@@ -19,6 +19,6 @@ public class RegistrationDataDTO {
     @NotNull @AssertTrue
     private Boolean termsAcceptance;
     private LocalDate addedDateUser = LocalDate.now();
-    @NotNull
-    private Boolean active;
+
+
 }
