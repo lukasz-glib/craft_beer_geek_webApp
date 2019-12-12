@@ -20,6 +20,11 @@
                             <a class="navbar-item" href="/contact">
                                 Kontakt
                             </a>
+                            <sec:authorize access="hasRole('ADMIN')">
+                                <a class="navbar-item" href="/all-contact">
+                                    Wyświetl wiadomości
+                                </a>
+                            </sec:authorize>
                             <%-- Tutaj kolejne linki w menu dodatkowym --%>
                         </div>
                     </div>
@@ -43,17 +48,17 @@
                                 <a class="button is-success" href="/recipes/own-recipes">
                                     <strong>Moje przepisy</strong>
                                 </a>
-                                <sec:authorize access="hasAnyRole('USER')">
+                                <sec:authorize access="hasRole('USER')">
                                     <a class="button is-primary" href="/user">
                                         <strong>Twoje konto</strong>
                                     </a>
                                 </sec:authorize>
-                                <sec:authorize access="hasAnyRole('ADMIN')">
+                                <sec:authorize access="hasRole('ADMIN')">
                                     <a class="button is-primary" href="/admin/manage-users">
                                         <strong>Zarządzaj użytkownikami</strong>
                                     </a>
                                 </sec:authorize>
-                                <sec:authorize access="hasAnyRole('ADMIN')">
+                                <sec:authorize access="hasRole('ADMIN')">
                                     <a class="button is-primary" href="/admin">
                                         <strong>Konto Admina</strong>
                                     </a>

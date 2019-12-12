@@ -25,8 +25,8 @@ public class AdminAccountController {
 
     @GetMapping
     public String prepareAccountPage(Principal principal, Model model) {
-        String adminname = principal.getName();
-        User loggedAdmin = userRepository.findByUsername(adminname);
+        String adminName = principal.getName();
+        User loggedAdmin = userRepository.findByUsername(adminName);
         model.addAttribute("adminAccount", loggedAdmin);
         return "admin/account-admin";
     }

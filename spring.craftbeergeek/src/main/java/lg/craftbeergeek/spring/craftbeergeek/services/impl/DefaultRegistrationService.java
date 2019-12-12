@@ -52,4 +52,7 @@ public class DefaultRegistrationService implements RegistrationService {
         }
         log.debug("Usunięto użytkownika: {}", user);
     }
+
+
+
 }

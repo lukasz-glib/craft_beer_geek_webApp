@@ -1,6 +1,5 @@
 package lg.craftbeergeek.spring.craftbeergeek.services;
 
-import lg.craftbeergeek.spring.craftbeergeek.dtos.RecipeDataDTO;
 import lg.craftbeergeek.spring.craftbeergeek.dtos.RegistrationDataDTO;
 
 public interface RegistrationService {
