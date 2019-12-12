@@ -7,6 +7,7 @@ import lg.craftbeergeek.spring.craftbeergeek.domain.repositories.RoleRepository;
 import lg.craftbeergeek.spring.craftbeergeek.domain.repositories.UserRepository;
 import lg.craftbeergeek.spring.craftbeergeek.dtos.RegistrationDataDTO;
 import lg.craftbeergeek.spring.craftbeergeek.services.RegistrationService;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
+@Slf4j
 public class DefaultRegistrationService implements RegistrationService {
 
     private final PasswordEncoder passwordEncoder;
@@ -39,5 +41,15 @@ public class DefaultRegistrationService implements RegistrationService {
         userRepository.save(user);
 
 
+    }
+
+    @Override
+    public void deleteUser(RegistrationDataDTO registrationDataDTO, Long id) {
+        User user = userRepository.findById(id).get();
+        log.debug("Usunięcie użytkownika: {}", user);
+        if (user != null) {
+            userRepository.delete(user);
+        }
+        log.debug("Usunięto użytkownika: {}", user);
     }
 }
