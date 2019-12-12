@@ -16,14 +16,15 @@
     <div class="container">
         <div class="hero-body">
             <h1 class="title">
-                <form:form method="get" modelAttribute="userAccount">
-                    Witaj użytkowniku <h1>${userAccount.username}</h1> na swoim koncie !
+                <form:form method="get" modelAttribute="adminAccount">
+                    Witaj Administratorze <h1>${adminAccount.username}</h1> na swoim koncie !
                 </form:form>
             </h1>
             <h2 class="subtitle">
-                Witaj na stronie <strong>Miłośników piwa craftowego !</strong>
+                Witaj na stronie <strong>Miłośników piwa craftowego !</strong>.
                 <br/>Lubisz napić się dobrego piwa kraftowego? Lubisz nowe wyzwania i chcesz nauczyć się sam ważyć piwo?
-                A może chcesz zrobić dobre wrażenie na znajomych? Postaramy się o to, aby Twoja wiedza była pełna
+                Chcesz zrobić dobre wrażenie na znajomych? <b>A może chcesz usunąć sobie jakiegoś użytkownika albo jego
+                przepis ?</b> Postaramy się o to, aby Twoja wiedza była pełna
                 i wartościowa. Na naszej stronie znajdziesz wiele przepisów ważenia piwa rzemieśliniczego w różnych
                 stylach oraz aktualności i nadchodzące wydarzenia w branży piwowarskiej.
             </h2>
