@@ -43,5 +43,16 @@ public class AdminAccountController {
         return "redirect:/admin/manage-users";
     }
 
+    @GetMapping("/active")
+    public String activeUser(Long id) {
+        userRepository.statusActiveUser(id);
+        return "redirect:/admin/manage-users";
+    }
+
+    @GetMapping("/blocked")
+    public String blockedUser(Long id) {
+        userRepository.statusBlockedUser(id);
+        return "redirect:/admin/manage-users";
+    }
 
 }
