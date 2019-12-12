@@ -43,9 +43,21 @@
                                 <a class="button is-success" href="/recipes/own-recipes">
                                     <strong>Moje przepisy</strong>
                                 </a>
-                                <a class="button is-primary" href="/user">
-                                    <strong>Twoje konto</strong>
-                                </a>
+                                <sec:authorize access="hasAnyRole('USER')">
+                                    <a class="button is-primary" href="/user">
+                                        <strong>Twoje konto</strong>
+                                    </a>
+                                </sec:authorize>
+                                <sec:authorize access="hasAnyRole('ADMIN')">
+                                    <a class="button is-primary" href="/admin/manage-users">
+                                        <strong>Zarządzaj użytkownikami</strong>
+                                    </a>
+                                </sec:authorize>
+                                <sec:authorize access="hasAnyRole('ADMIN')">
+                                    <a class="button is-primary" href="/admin">
+                                        <strong>Konto Admina</strong>
+                                    </a>
+                                </sec:authorize>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit">Wyloguj</button>
                                     <sec:csrfInput/>
