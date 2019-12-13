@@ -2,6 +2,7 @@ package lg.craftbeergeek.spring.craftbeergeek.heroku;
 
 import lg.craftbeergeek.spring.craftbeergeek.domain.entities.Role;
 import lg.craftbeergeek.spring.craftbeergeek.domain.repositories.RoleRepository;
+import lg.craftbeergeek.spring.craftbeergeek.domain.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class StarterDataCreator implements ApplicationRunner {
 
     private final RoleRepository roleRepository;
+    private final UserRepository userRepository;
 
     @Override @Transactional
     public void run(ApplicationArguments args) throws Exception {
@@ -29,5 +31,10 @@ public class StarterDataCreator implements ApplicationRunner {
         Role adminRole = new Role();
         adminRole.setName("ROLE_ADMIN");
         roleRepository.save(adminRole);
+
+        userRepository.createAdmin();
+        userRepository.makeAdminAdmin();
+        userRepository.createUser();
+        userRepository.makeUserUser();
     }
 }
