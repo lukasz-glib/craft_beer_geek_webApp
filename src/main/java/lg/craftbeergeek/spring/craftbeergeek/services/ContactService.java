@@ -10,6 +10,6 @@ public interface ContactService {
 
     List<ContactDataDTO> findAllContactMessages();
 
-//    void deleteMessage(ContactDataDTO contactDataDTO, Long id);
+    void deleteMessage(ContactDataDTO contactDataDTO, Long id);
 
 }

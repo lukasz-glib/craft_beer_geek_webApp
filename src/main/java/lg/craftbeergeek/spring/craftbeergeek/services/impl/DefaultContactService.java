@@ -40,4 +40,14 @@ public class DefaultContactService implements ContactService {
                 .map(m-> model.map(m, ContactDataDTO.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteMessage(ContactDataDTO contactDataDTO, Long id) {
+        Contact contact = contactRepository.findById(id).get();
+        log.debug("Usunięcie wiadomości: {}", contact);
+        if(contact != null) {
+            contactRepository.delete(contact);
+        }
+        log.debug("Usunięto wiadomość: {}", contact);
+    }
 }

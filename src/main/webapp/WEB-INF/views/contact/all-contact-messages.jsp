@@ -35,6 +35,10 @@
             <td>
                 <c:url value="/admin" var="returnURL"></c:url>
                 <a class="button is-link" href="${returnURL}">Powrót</a>
+                <c:url value="/contact/delete" var="deleteURL">
+                    <c:param name="id" value="${message.id}"/>
+                </c:url>
+                <a class="button is-danger" href="${deleteURL}">Usuń</a>
             </td>
         </tr>
     </c:forEach>

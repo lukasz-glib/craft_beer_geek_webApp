@@ -38,5 +38,11 @@ public class ContactController {
         return "redirect:/contact";
     }
 
+    @GetMapping("/delete")
+    public String processDeleteMessage(ContactDataDTO contactDataDTO, Long id) {
+        contactService.deleteMessage(contactDataDTO, id);
+        return "redirect:/contact";
+    }
+
 
 }
