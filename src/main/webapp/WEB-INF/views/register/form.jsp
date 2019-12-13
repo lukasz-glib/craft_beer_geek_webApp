@@ -19,7 +19,7 @@
                 Registration
             </h1>
             <h2 class="subtitle">
-                Register your account to make promises right now!
+                Register your account to make craft beer right now!
             </h2>
         </div>
     </div>
