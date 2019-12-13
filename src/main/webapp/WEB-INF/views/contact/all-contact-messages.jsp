@@ -32,10 +32,10 @@
             <td>${message.email}</td>
             <td>${message.topic}</td>
             <td>${message.description}</td>
-<%--            <td>--%>
-<%--                <c:url value="/user" var="returnURL"></c:url>--%>
-<%--                <a href="${returnURL}">Powrót</a>--%>
-<%--            </td>--%>
+            <td>
+                <c:url value="/admin" var="returnURL"></c:url>
+                <a class="button is-link" href="${returnURL}">Powrót</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
