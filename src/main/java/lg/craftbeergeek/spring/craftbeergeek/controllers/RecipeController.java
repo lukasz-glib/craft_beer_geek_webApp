@@ -50,7 +50,8 @@ public class RecipeController {
     }
 
     @PostMapping("/create")
-    public String processCreationRecipeForm(@ModelAttribute("recipe") @Valid RecipeDataDTO recipeDataDTO, BindingResult result) {
+    public String processCreationRecipeForm(@ModelAttribute("recipe") @Valid RecipeDataDTO recipeDataDTO,
+                                            BindingResult result) {
         if (result.hasErrors()) {
             return "recipe/add-recipe";
         }

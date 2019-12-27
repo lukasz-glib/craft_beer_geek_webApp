@@ -41,7 +41,7 @@ public class User {
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Recipe> recipes = new ArrayList<>();
 
 
