@@ -34,7 +34,6 @@ public class Recipe {
     @Column(nullable = false)
     private String fermentation;
     private String bottling;
-
     @ManyToOne
     private User user;
 
